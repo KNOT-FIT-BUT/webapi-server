@@ -1,0 +1,40 @@
+{
+  "asset":
+  {
+  	"name":"KBstatsMetrics",
+  	"description":"",
+        "version":"1445442270"
+  },
+
+  "configuration":
+  {
+    "auto-load": true,
+    "access":"off",
+    "tools": ["ner","figa"],
+    "parts":
+    {
+    	"kb": 
+    	{
+    		"target":"../assets.data/custom/KB-HEAD.all",
+  			"adapter":"KBnerShared",
+  			"adapter_configuration":
+  			{
+				"header":
+	    		{
+	    			"external_file":"../assets.data/custom/HEAD-KB",
+	    			"included":false,
+	    			"custom":null
+	  			},
+	  			"value_splitter": "|"  			
+  			}
+    	},
+    	"fsa":
+    	{
+    		"target": "../assets.data/downloaded/figa/automata.fsa",
+	   		"adapter":"GenericAsset",
+	   		"adapter_configuration":null
+    	}
+    }
+  }
+  
+}

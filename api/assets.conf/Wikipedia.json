@@ -1,0 +1,55 @@
+{
+  "asset":
+  {
+  	"name":"Wikipedia",
+  	"description":"",
+	"version":""
+  },
+
+  "configuration":
+  {
+    "auto-load": false,
+    "access":"off",
+    "tools":"figa",
+    "parts":
+    {
+    	"kb": 
+    	{
+    		"target":"/mnt/minerva1/nlp/projects/wikify/wikipedia/data/KB.all",
+  			"adapter":"KBgeneric",
+  			"adapter_configuration":
+  			{
+	  			"header":
+	    		{
+	    			"external_file":null,
+	    			"included":false,
+	    			"custom":
+	    			{
+					    "generic": 
+					    [
+					      "title",
+					      "id",
+					      "*alias",
+					      "*backlinks",
+					      "views",
+					      "primary tag",
+                			      "first sentecne"
+					    ],
+					    "data": {"generic":{"name":"Generic data","dataPlus":null}}
+					}
+					
+	  			},
+	  			"value_splitter": "|"
+  			}
+    	},
+    	"fsa":
+    	{
+    		"target": "/mnt/minerva1/nlp/projects/wikify/wikipedia/data/KB.all.fsa",
+    		"adapter":"GenericAsset",
+    		"adapter_configuration":null
+    	}
+    }
+  }
+  
+}
+

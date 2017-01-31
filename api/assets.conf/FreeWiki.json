@@ -1,0 +1,61 @@
+{
+  "asset":
+  {
+  	"name":"Wiki+Freebase",
+  	"description":"",
+	"version":""
+  },
+
+  "configuration":
+  {
+    "auto-load": false,
+    "access":"off",
+    "tools": "figa",
+    "parts":
+    {
+    	"kb": 
+    	{
+    		"target":"/mnt/minerva1/nlp/projects/wikify/wb/data/KB.all",
+  			"adapter":"KBgeneric",
+  			"adapter_configuration":
+  			{
+				"header":
+	    		{
+	    			"external_file":null,
+	    			"included":false,
+	    			"custom":
+	    			{
+					    "generic": 
+					    [
+					      	"title",
+					      	"*alias",
+					      	"wikipedia id",
+					      	"wikipedia url",
+						"wikipedia desc",
+					      	"freebase id",
+					      	"freebase url",
+						"freebase desc",
+						"backlinks",
+						"views",
+						"primary tag",
+						"*type"
+					    ],
+					    "data": {"generic":{"name":"Generic data","dataPlus":null}}
+					}
+	  			},
+	  			"value_splitter": "|"  			
+  			}
+    	},
+    	"fsa":
+    	{
+    		"target": "/mnt/minerva1/nlp/projects/wikify/wb/data/KB.all.fsa",
+    		"adapter":"GenericAsset",
+    		"adapter_configuration":null
+    	}
+    }
+  }
+  
+}
+
+
+
